@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Parking Slot</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* Background Image */
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image:url('https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=60');
+  background-size:cover;
+  background-position:center;
+  color:white;
+  padding:20px;
+  position:relative;
+}
+
+/* Dark Overlay */
+body::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.65);
+  backdrop-filter:blur(2px);
+  z-index:0;
+}
+
+/* Main Box */
+.container{
+  position:relative;
+  z-index:1;
+  width:500px;
+  background:rgba(255,255,255,0.1);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 15px rgba(255,255,0,0.6);
+  animation:fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  text-shadow:0 0 12px yellow;
+  font-size:28px;
+}
+
+/* Slot Grid */
+.slot-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:20px;
+}
+
+.slot{
+  padding:18px 0;
+  text-align:center;
+  border-radius:10px;
+  background:rgba(255,255,255,0.15);
+  cursor:pointer;
+  transition:0.3s;
+  border:2px solid transparent;
+}
+
+.slot:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 12px yellow;
+  border-color:yellow;
+}
+
+/* Selected Slot */
+.slot.selected{
+  background:yellow;
+  color:#222;
+  font-weight:bold;
+  box-shadow:0 0 15px yellow;
+  border-color:yellow;
+}
+
+/* Button */
+.confirm-btn{
+  width:100%;
+  margin-top:25px;
+  padding:12px;
+  border:none;
+  background:yellow;
+  color:#333;
+  font-size:18px;
+  font-weight:bold;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.confirm-btn:hover{
+  transform:scale(1.05);
+  background:#ffea3b;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>🚗 Select Your Parking Slot</h2>
+
+  <div class="slot-grid" id="slotGrid">
+    <div class="slot">A1</div>
+    <div class="slot">A2</div>
+    <div class="slot">A3</div>
+    <div class="slot">A4</div>
+
+    <div class="slot">B1</div>
+    <div class="slot">B2</div>
+    <div class="slot">B3</div>
+    <div class="slot">B4</div>
+
+    <div class="slot">C1</div>
+    <div class="slot">C2</div>
+    <div class="slot">C3</div>
+    <div class="slot">C4</div>
+  </div>
+
+  <button class="confirm-btn" onclick="confirmSlot()">Confirm Slot</button>
+</div>
+
+<script>
+let slots = document.querySelectorAll('.slot');
+let selectedSlot = null;
+
+slots.forEach(slot=>{
+  slot.addEventListener('click', ()=>{
+    slots.forEach(s=>s.classList.remove('selected'));
+    slot.classList.add('selected');
+    selectedSlot = slot.innerText;
+  });
+});
+
+function confirmSlot(){
+  if(!selectedSlot){
+    alert("⚠ Please select a parking slot!");
+    return;
+  }
+
+  alert("Selected Slot: " + selectedSlot);
+  window.location.href="payment.html";  // change page name if needed
+}
+</script>
+
+</body>
+</html>

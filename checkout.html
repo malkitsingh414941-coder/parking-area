@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#0f2027,#1c1c2f,#203a43);
+}
+
+.checkout-wrapper{
+    width:100%;
+    max-width:450px;
+    padding:20px;
+}
+
+.checkout-card{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius:25px;
+    padding:35px 25px;
+    box-shadow:0 10px 35px rgba(255,165,0,0.25);
+    color:white;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform: translateY(-20px);}
+    to{opacity:1; transform: translateY(0);}
+}
+
+.checkout-card h1{
+    font-size:32px;
+    color:#ffa600;
+    margin-bottom:5px;
+    text-shadow: 0 0 8px #ffa600;
+    text-align:center;
+}
+
+.checkout-card p{
+    font-size:14px;
+    color:#ddd;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.checkout-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
+.field label{
+    color:#ffb300;
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.field input,
+.field select{
+    padding:12px;
+    border-radius:12px;
+    border:2px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
+    color:white;
+    font-size:15px;
+    outline:none;
+    transition: all 0.3s ease;
+}
+
+.field input:focus,
+.field select:focus{
+    border:2px solid #ffa600;
+    box-shadow: 0 0 12px #ffa600, 0 0 20px #ffce55;
+    transform: scale(1.03);
+}
+
+.checkout-btn{
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    color:black;
+    background: linear-gradient(90deg,#ffa600,#ffce55);
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover{
+    transform: scale(1.07);
+    box-shadow: 0 0 20px #ffa600, 0 0 35px #ffce55;
+}
+
+.back-link{
+    display:block;
+    text-align:center;
+    margin-top:12px;
+    text-decoration:none;
+    font-size:14px;
+    color:#fff;
+    opacity:0.7;
+    transition:0.3s;
+}
+
+.back-link:hover{
+    color:#ffa600;
+    opacity:1;
+}
+</style>
+
+</head>
+<body>
+
+<div class="checkout-wrapper">
+    <div class="checkout-card">
+        <h1>Checkout</h1>
+        <p>Complete your payment securely</p>
+
+        <form class="checkout-form">
+
+            <div class="field">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name">
+            </div>
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="field">
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+            </div>
+
+            <div style="display:flex; gap:15px;">
+                <div class="field" style="flex:1;">
+                    <label>Expiry</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+
+                <div class="field" style="flex:1;">
+                    <label>CVV</label>
+                    <input type="password" placeholder="***" style="width:130px;">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Payment Method</label>
+                <select>
+                    <option>Credit Card</option>
+                     <option>Debit Card</option>
+                    <option>UPI</option>
+                    <option>Net Banking</option>
+                </select>
+            </div>
+
+            <button class="checkout-btn">Make Payment</button>
+
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

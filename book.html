@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Parking Slot</title>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#0f2027,#1c1c2f,#203a43);
+  padding: 30px;
+}
+
+.container{
+  background: rgba(255,255,255,0.05);
+  padding: 35px;
+  border-radius: 20px;
+  width: 450px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255,255,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Heading */
+header h1{
+  color: #ffd700; /* Neon yellow */
+  text-shadow: 0 0 15px #ffd700;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+header p{
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* Form Fields */
+.field{
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+label{
+  color: #ffd700;
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: block;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+input, select{
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0 0 15px rgba(255,215,0,0.4);
+}
+
+input::placeholder{
+  color: #d4d4d4;
+}
+
+select option{
+  background: #1a1a1a;
+}
+
+/* Button */
+.book-btn{
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background: #ffd700;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 5px black;
+  box-shadow: 0 0 25px #ffd700;
+}
+
+.book-btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #ffd700;
+}
+
+/* Back Link */
+.back-link{
+  display: block;
+  margin-top: 20px;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Book Your Slot</h1>
+    <p>Secure your parking easily</p>
+  </header>
+
+  <form>
+
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your name" required>
+    </div>
+
+    <div class="field">
+      <label>Vehicle Number</label>
+      <input type="text" placeholder="KA-09-1234" required>
+    </div>
+
+    <div class="field">
+      <label>Vehicle Type</label>
+      <select required>
+        <option value="">Select vehicle type</option>
+        <option>Car</option>
+        <option>Bike</option>
+        <option>EV Car</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Select Slot Number</label>
+      <select required>
+        <option value="">Choose slot</option>
+        <option>Slot 1</option>
+        <option>Slot 2</option>
+        <option>Slot 3</option>
+        <option>Slot 4</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Booking Date</label>
+      <input type="date" required>
+    </div>
+
+    <div class="field">
+      <label>Entry Time</label>
+      <input type="time" required>
+    </div>
+
+    <div class="field">
+      <label>Exit Time</label>
+      <input type="time" required>
+    </div>
+
+    <button class="book-btn">Confirm Booking</button>
+
+  </form>
+
+  <a href="slot.html" class="back-link">⬅ Back to Slots</a>
+</div>
+
+</body>
+</html>
+
+  

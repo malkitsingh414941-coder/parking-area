@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* 🔥 Background Parking Image */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background: url('park.jpg') 
+    no-repeat center/cover;
+}
+
+/* Dark overlay */
+body::before{
+    content:'';
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+    z-index:-1;
+}
+
+.login-wrapper{
+    width:100%;
+    max-width:400px;
+    padding:20px;
+}
+
+.login-card{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius:25px;
+    padding:35px 25px;
+    box-shadow:0 10px 35px rgba(255,165,0,0.25);
+    color:white;
+    text-align:center;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform: translateY(-20px);}
+    to{opacity:1; transform: translateY(0);}
+}
+
+.login-card h1{
+    font-size:32px;
+    color:#ffa600;
+    margin-bottom:5px;
+    text-shadow: 0 0 8px #ffa600;
+}
+
+.login-card p{
+    font-size:14px;
+    color:#ddd;
+    margin-bottom:25px;
+}
+
+.login-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.field{
+    text-align:left;
+}
+
+.field label{
+    color:#ffb300;
+    font-size:14px;
+    margin-bottom:5px;
+    display:block;
+}
+
+.field input{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:2px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
+    color:white;
+    font-size:15px;
+    outline:none;
+    transition: 0.3s ease;
+}
+
+.field input:focus{
+    border:2px solid #ffa600;
+    box-shadow: 0 0 12px #ffa600, 0 0 20px #ffce55;
+    transform: scale(1.03);
+}
+
+.login-btn{
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    color:black;
+    background: linear-gradient(90deg,#ffa600,#ffce55);
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    transform: scale(1.07);
+    box-shadow:0 0 20px #ffa600, 0 0 35px #ffce55;
+}
+
+.back-link{
+    display:block;
+    margin-top:12px;
+    text-decoration:none;
+    font-size:14px;
+    color:white;
+    opacity:0.7;
+    transition:0.3s;
+}
+
+.back-link:hover{
+    color:#ffa600;
+    opacity:1;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-card">
+        <h1>Login</h1>
+        <p>Access your parking dashboard</p>
+
+        <form class="login-form" id="loginForm">
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" id="emailInput" placeholder="Enter your email">
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+                <input type="password" id="passwordInput" placeholder="Enter password">
+            </div>
+
+            <button class="login-btn">Login</button>
+
+            <a href="register.html" class="back-link">Create new account</a>
+
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
+
+    // Define credentials
+    const adminEmail = 'admin@parking.com';
+    const adminPassword = 'admin123';
+    const userEmail = 'user@parking.com';
+    const userPassword = 'user123';
+
+    if (email === adminEmail && password === adminPassword) {
+        alert('Admin login successful!');
+        window.location.href = 'admin.html';
+    } else if (email === userEmail && password === userPassword) {
+        alert('User login successful!');
+        window.location.href = 'dashboard.html';
+    } else {
+        alert('Invalid email or password. Please try again.');
+    }
+});
+</script>
+</body>
+</html>
+

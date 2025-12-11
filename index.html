@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking System - Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("park.jpg") center/cover no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 40px 60px;
+            border-radius: 20px;
+            border: 2px solid #ffdd00;
+            box-shadow: 0 0 30px #ffdd00;
+            backdrop-filter: blur(6px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: #ffdd00;
+            text-shadow: 0 0 20px #ffdd00;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #ffdd00;
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px #ffdd00;
+        }
+
+        .btn:hover {
+            background: #fff;
+            box-shadow: 0 0 25px #ffdd00;
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0; transform: scale(0.8);}
+            100% {opacity: 1; transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Smart Parking</h1>
+        <p>Book your parking slot easily, quickly and securely.</p>
+
+        <a href="login.html" class="btn">Get Started</a>
+    </div>
+
+</body>
+</html>

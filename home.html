@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parking System - Home</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* Background Image */
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image:url;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  color:white;
+}
+
+/* Dark Overlay */
+body::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.65);
+  backdrop-filter:blur(2px);
+  z-index:0;
+
+}
+
+/* Main Container */
+.home-box{
+  position:relative;
+  z-index:10;
+  background:rgba(255,255,255,0.1);
+  padding:40px;
+  width:600px;
+  border-radius:25px;
+  text-align:center;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 20px rgba(255,255,0,0.6);
+  animation:fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.home-box h1{
+  font-size:36px;
+  color:yellow;
+  text-shadow:0 0 15px yellow;
+  margin-bottom:10px;
+}
+
+.home-box p{
+  font-size:16px;
+  color:#eee;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+/* Button Container */
+.btn-group{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:15px;
+}
+
+/* Buttons */
+.btn{
+  padding:14px 25px;
+  background:yellow;
+  color:#333;
+  border:none;
+  border-radius:10px;
+  font-size:18px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:#ffea3b;
+  transform:scale(1.07);
+  box-shadow:0 0 15px yellow;
+}
+
+/* Footer */
+.footer{
+  margin-top:25px;
+  font-size:13px;
+  color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="home-box">
+  
+  <h1>🚗 Smart Parking System</h1>
+  <p>Find, reserve, and manage parking slots instantly.  
+     Fast, secure, and easy-to-use platform for smooth parking experience.</p>
+  
+  <div class="btn-group">
+      <a href="login.html" class="btn">Login</a>
+      <a href="slot.html" class="btn">Book Slot</a>
+      <a href="dashboard.html" class="btn">Dashboard</a>
+  </div>
+
+  <div class="footer">
+     © 2025 Smart Parking System — All Rights Reserved
+  </div>
+
+</div>
+
+</body>
+</html>

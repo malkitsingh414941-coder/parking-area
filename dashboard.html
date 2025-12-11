@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Parking System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Background Image */
+body{
+    min-height:100vh;
+    background-image: url('https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=60');
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    padding:20px;
+}
+
+/* Overlay */
+body::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+    z-index:0;
+}
+
+.dashboard-container{
+    position:relative;
+    z-index:1;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* Header */
+.dashboard-header{
+    text-align:center;
+    color:yellow;
+    text-shadow:0 0 15px yellow;
+}
+
+.dashboard-header h1{
+    font-size:36px;
+}
+
+.dashboard-header p{
+    color:#fff;
+    font-size:16px;
+}
+
+/* Cards Grid */
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* Card Style */
+.card{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 18px yellow;
+    color:white;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px yellow;
+}
+
+.card h2{
+    font-size:28px;
+    margin-bottom:10px;
+    color:yellow;
+    text-shadow:0 0 12px yellow;
+}
+
+.card p{
+    font-size:16px;
+    color:#fff;
+}
+
+/* Quick Links */
+.quick-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.link-btn{
+    padding:12px 25px;
+    background:yellow;
+    color:#222;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 0 15px yellow;
+}
+
+.link-btn:hover{
+    background:#ffea3b;
+    transform:scale(1.05);
+    box-shadow:0 0 25px yellow;
+}
+</style>
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+        <h1>🚗 Dashboard</h1>
+        <p>Welcome to Smart Parking System. Manage your bookings and slots easily.</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="cards-grid">
+        <div class="card">
+            <h2>12</h2>
+            <p>Booked Slots</p>
+        </div>
+        <div class="card">
+            <h2>8</h2>
+            <p>Available Slots</p>
+        </div>
+        <div class="card">
+            <h2>₹1500</h2>
+            <p>Total Revenue</p>
+        </div>
+        <div class="card">
+            <h2>5</h2>
+            <p>Pending Payments</p>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+        <a href="slot.html" class="link-btn">Book Slot</a>
+        <a href="payment.html" class="link-btn">Make Payment</a>
+        <a href="register.html" class="link-btn">Add User</a>
+        <a href="map.html" class="link-btn">map</a>
+        <a href="index.html" class="link-btn">Logout</a>
+    </div>
+
+</div>
+
+</body>
+</html>

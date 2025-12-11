@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f2027,#1c1c2f,#203a43);
+    color:#fff;
+    min-height:100vh;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #00eaff;
+    box-shadow:0 0 12px #00eaff;
+}
+
+.navbar h2{
+    color:#00eaff;
+}
+
+.menu a{
+    margin:0 12px;
+    text-decoration:none;
+    color:#fff;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#00eaff;
+    text-shadow:0 0 8px #00eaff;
+}
+
+.logout{
+    color:#ff0066 !important;
+}
+
+/* Dashboard Container */
+.dashboard-container{
+    width:90%;
+    margin:50px auto;
+    text-align:center;
+}
+
+.dashboard-container h1{
+    font-size:30px;
+    color:#00eaff;
+    margin-bottom:10px;
+}
+
+.dashboard-container p{
+    margin-bottom:40px;
+    color:#ddd;
+}
+
+/* Slot Design */
+.slot-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.slot{
+    padding:20px;
+    border-radius:12px;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+    text-shadow:0 0 10px rgba(255,255,255,0.3);
+    box-shadow:0 0 12px rgba(255,255,255,0.2);
+}
+
+.slot.available{
+    background:rgba(0,255,255,0.1);
+    border:1px solid #00eaff;
+    color:#00eaff;
+}
+
+.slot.booked{
+    background:rgba(255,0,102,0.08);
+    border:1px solid #ff0066;
+    color:#ff4d94;
+}
+
+.slot:hover{
+    transform:scale(1.05);
+}
+
+/* Button */
+.btn{
+    margin-top:40px;
+    padding:15px 40px;
+    background:#00eaff;
+    border:none;
+    color:#000;
+    font-size:18px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+    text-shadow:0 0 10px #000;
+    box-shadow:0 0 15px #00eaff;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:scale(1.1);
+}
