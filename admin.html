@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Parking System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-position:center;
+    position:relative;
+    padding:20px;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+    z-index:0;
+}
+
+.dashboard-page{
+    display:flex;
+    position:relative;
+    z-index:1;
+    height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+    width:250px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 18px yellow;
+    height:100%;
+    color:white;
+}
+
+.sidebar h2{
+    color:yellow;
+    margin-bottom:20px;
+    text-shadow:0 0 10px yellow;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px;
+    margin:8px 0;
+    background:rgba(255,255,255,0.15);
+    border-radius:10px;
+    color:white;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 0 8px yellow;
+}
+
+.sidebar a:hover{
+    background:yellow;
+    color:#222;
+    transform:scale(1.05);
+}
+
+/* Main Content */
+.main-panel{
+    flex:1;
+    padding:30px;
+}
+
+/* Header */
+.top-header{
+    background:rgba(255,255,255,0.1);
+    color:white;
+    padding:15px 30px;
+    border-radius:15px;
+    box-shadow:0 0 20px yellow;
+    backdrop-filter:blur(10px);
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+/* Card Section */
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    box-shadow:0 0 18px yellow;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 28px yellow;
+}
+
+.card h1{
+    font-size:32px;
+    color:yellow;
+    text-shadow:0 0 12px yellow;
+}
+
+.card p{
+    margin-top:8px;
+}
+
+/* Buttons bottom */
+.bottom-links{
+    margin-top:35px;
+    text-align:center;
+}
+
+.bottom-links a{
+    padding:12px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    background:yellow;
+    font-weight:bold;
+    color:black;
+    margin:10px;
+    box-shadow:0 0 15px yellow;
+    transition:0.3s;
+}
+
+.bottom-links a:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px yellow;
+}
+</style>
+</head>
+<body>
+
+<div class="dashboard-page">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>⚙ Admin Menu</h2>
+        <a href="slot.html">Book Slot</a>
+        <a href="payment.html">Make Payment</a>
+        <a href="register.html">Add User</a>
+        <a href="map.html">View Parking Map</a>
+        <a href="index.html">Logout</a>
+    </div>
+
+    <!-- Main Area -->
+    <div class="main-panel">
+
+        <div class="top-header">🚗 Admin Dashboard</div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h1>12</h1>
+                <p>Total Booked Slots</p>
+            </div>
+            <div class="card">
+                <h1>08</h1>
+                <p>Available Slots</p>
+            </div>
+            <div class="card">
+                <h1>₹1500</h1>
+                <p>Total Revenue Collect</p>
+            </div>
+            <div class="card">
+                <h1>05</h1>
+                <p>Pending Payments</p>
+            </div>
+        </div>
+
+        <div class="bottom-links">
+            <a href="slot.html">Book Slot</a>
+            <a href="payment.html">Make Payment</a>
+            <a href="register.html">Add User</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
